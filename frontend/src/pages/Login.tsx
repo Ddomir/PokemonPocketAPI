@@ -39,11 +39,11 @@ export default function LoginPage() {
 
     return (
       <div>
-        <h2 className="text-2xl font-semibold mb-4">Sign Up</h2>
+        <h2 className="text-4xl font-bold mb-10 text-center">Sign Up</h2>
         <form onSubmit={handleSubmit}>
           <label className="block mb-2">
             <input
-              className="mt-1 p-2 block w-full border border-gray-200 rounded"
+              className="pl-5 mt-1 mb-5 p-2 block w-full border bg-gray-50 font-semibold border-gray-50 text-xs tracking-wider rounded-full inset-shadow-sm inset-shadow-gray-400"
               type="text"
               name="name"
               placeholder="Name..."
@@ -54,7 +54,7 @@ export default function LoginPage() {
 
           <label className="block mb-2">
             <input
-              className="mt-1 p-2 block w-full border border-gray-200 rounded"
+              className="pl-5 mt-1 mb-5 p-2 block w-full border bg-gray-50 font-semibold border-gray-50 text-xs tracking-wider rounded-full inset-shadow-sm inset-shadow-gray-400"
               type="email"
               name="email"
               placeholder="Email..."
@@ -65,7 +65,7 @@ export default function LoginPage() {
 
           <label className="block mb-4">
             <input
-              className="mt-1 p-2 block w-full border border-gray-200 rounded"
+              className="pl-5 mt-1 mb-5 p-2 block w-full border bg-gray-50 font-semibold border-gray-50 text-xs tracking-wider rounded-full inset-shadow-sm inset-shadow-gray-400"
               type="password"
               name="password"
               placeholder="Password..."
@@ -75,14 +75,14 @@ export default function LoginPage() {
           </label>
 
           <button
-            className="px-4 py-2 bg-blue-600 text-white rounded block mx-auto"
+            className="px-5 py-2 shadow-lg pb-2 pt-1 mb-5 mt-8 bg-sky-300 text-white font-semibold tracking-tight text-xl rounded block mx-auto rounded-full px-8"
             type="submit"
           >
             Sign Up
           </button>
         </form>
 
-        <div className="block mx-auto text-xs mt-4 text-center text-gray-500 underline hover:text-blue-600 cursor-pointer">
+        <div className="block mx-auto text-xs mt-2 tracking-wide text-center text-black underline hover:text-blue-600 cursor-pointer">
           <p onClick={() => isSignUp(!signUp)}>
             Already have an account? Sign in.
           </p>
@@ -126,11 +126,11 @@ export default function LoginPage() {
 
     return (
       <div>
-        <h2 className="text-2xl font-semibold mb-4">Sign In</h2>
+        <h2 className="text-4xl font-bold mb-10 text-center">Sign In</h2>
         <form onSubmit={handleSubmit}>
           <label className="block mb-2">
             <input
-              className="mt-1 p-2 block w-full border border-gray-200 rounded"
+              className="pl-5 mt-1 mb-5 p-2 block w-full border bg-gray-50 font-semibold border-gray-50 text-xs tracking-wider rounded-full inset-shadow-sm inset-shadow-gray-400"
               type="email"
               name="email"
               placeholder="Email..."
@@ -141,7 +141,7 @@ export default function LoginPage() {
 
           <label className="block mb-4">
             <input
-              className="mt-1 p-2 block w-full border border-gray-200 rounded"
+              className="pl-5 mt-1 p-2 block w-full border bg-gray-50 font-semibold border-gray-50 text-xs tracking-wider rounded-full inset-shadow-sm inset-shadow-gray-400"
               type="password"
               name="password"
               placeholder="Password..."
@@ -151,14 +151,14 @@ export default function LoginPage() {
           </label>
 
           <button
-            className="px-4 py-2 bg-blue-600 text-white rounded block mx-auto"
+            className="px-5 py-2 shadow-lg pb-2 pt-1 mb-0 mt-8 bg-sky-300 text-white font-semibold tracking-tight text-xl rounded block mx-auto rounded-full px-8"
             type="submit"
           >
-            Sign In
+            OK
           </button>
         </form>
 
-        <div className="block mx-auto text-xs mt-4 text-center text-gray-500 underline hover:text-blue-600 cursor-pointer">
+        <div className="block mx-auto text-xs mt-2 tracking-wide text-center text-black underline hover:text-blue-600 cursor-pointer">
           <p onClick={() => isSignUp(!signUp)}>
             Dont have an account? Sign up.
           </p>
@@ -168,8 +168,12 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="max-w-md mx-auto p-6 shadow rounded bg-white height-full w-1/2">
-      {signUp ? <SignUp /> : <SignIn />}
+    <div className="bg-gradient-to-b from-indigo-200 to-red-50 overflow-hidden">
+        <div className="w-screen h-screen flex items-center justify-center">
+        <div className="max-w-60 mx-auto p-6 shadow rounded-3xl bg-white height-full w-1/2">
+          {signUp ? <SignUp /> : <SignIn />}
+        </div>
+      </div>
     </div>
   );
 }
