@@ -177,6 +177,21 @@ When not in use, stop the PostgreSQL Docker container to save resources:
 docker stop ptcgp-db
 ```
 
-### Frontend Routing
 
-The frontend uses React Router. Ensure your browser supports HTML5 history mode for proper routing.
+### DB Changes
+
+If the DB has changed, you will need to reset the migration. This is the easiest way in development.
+
+1. Delete the migration folder in backend/prisma if existing.
+2. Run
+```bash
+cd backend
+npx prisma migrate reset
+npm run db:migrate
+```
+
+3. Then run the backend and seed.
+```bash
+npm run db:seed
+npm run dev
+```

@@ -63,17 +63,21 @@ model Card {
   name            String
   typeID          Int
   type            Type      @relation(fields: [typeID], references: [id])
-  abilityID       Int
-  ability         Ability   @relation(fields: [abilityID], references: [id])
-  move1ID         Int
+  abilityID       Int?
+  ability         Ability?   @relation(fields: [abilityID], references: [id])
+  move1ID         Int?
   move1           Move?     @relation("CardMove1", fields: [move1ID], references: [id])
-  move2ID         Int
+  move2ID         Int?
   move2           Move?     @relation("CardMove2", fields: [move2ID], references: [id])
   retreatCost     Int
-  gen             Int
-  packs           String    @db.Text
+  gen             String    @db.Text
+  packs           String[]  @db.Text
   hp              Int
   is_ex           Boolean   @default(false)
+  rarity          Int
+  stage           Int
+
+  art             String?   @db.Text
 
   createdAt       DateTime  @default(now())
   updatedAt       DateTime  @updatedAt
@@ -95,7 +99,7 @@ model Ability {
   name        String    @unique
   statusID    Int?
   status      Status?   @relation(fields: [statusID], references: [id])
-  description String  @db.Text
+  description String    @db.Text
 
   cards       Card[]
 }
