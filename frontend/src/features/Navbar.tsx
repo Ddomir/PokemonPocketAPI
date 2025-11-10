@@ -24,8 +24,22 @@ export default function Navbar() {
   return (
     <nav className="w-full h-16 bg-white shadow flex items-center px-4">
       <h1 className="text-xl font-bold flex-grow">My App</h1>
+      <div className="px-4">
+        <button
+          className="px-4 py-2 rounded text-black hover:bg-gray-100 transition ease-in-out duration-200"
+          onClick={() => navigate("/dashboard")}
+        >
+          Dashboard
+        </button>
+        <button
+          className="px-4 py-2 rounded text-black hover:bg-gray-100 transition ease-in-out duration-200"
+          onClick={() => navigate("/search")}
+        >
+          Search
+        </button>
+      </div>
       <button
-        className="bg-blue-600 px-4 py-2 rounded text-white hover:bg-blue-700"
+        className="bg-blue-600 px-4 py-2 rounded text-white hover:bg-blue-700 transition ease-in-out duration-200"
         onClick={handleLogout}
       >
         Logout

@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 
 import LoginPage from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
+import SearchPage from "./pages/Search";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Routes>
         <Route path="/" element={<LoginPage />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/search" element={<SearchPage />} />
       </Routes>
     </div>
   );

@@ -9,6 +9,8 @@ import roleRoutes from "./routes/roleRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
 import typeRoutes from "./routes/typeRoutes.js";
 import statusRoutes from "./routes/statusRoutes.js";
+import cardRoutes from "./routes/cardRoutes.js";
+import moveRoutes from "./routes/moveRoutes.js";
 
 dotenv.config();
 
@@ -34,6 +36,8 @@ app.use("/", authRoutes);
 app.use("/", userRoutes);
 app.use("/", typeRoutes);
 app.use("/", statusRoutes);
+app.use("/", cardRoutes);
+app.use("/", moveRoutes);
 
 
 
